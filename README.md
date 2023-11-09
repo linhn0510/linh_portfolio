@@ -32,7 +32,7 @@ FROM     sales$
 GROUP BY DATENAME(year, Date), DATENAME(quarter, Date)
 ORDER BY year, total_quantity DESC;
 ````
-### 5. Which product had the most significant swift in sales 
+### 5. Which product had the most significant swift in sales? 
 ````sql
 WITH yearly_sales AS (
 SELECT s.Product_ID as product_id, p.Product_Name as product_name, YEAR(s.Date) AS year, CAST(SUM(p.Product_Price * s.Units) AS decimal(10, 2)) AS total_revenue
@@ -86,7 +86,7 @@ FROM     products$ AS p INNER JOIN
 GROUP BY st.Store_Name
 ORDER BY store_sales DESC
 ````
-### 10. Which 5 cities generated the most revenue? Change percentage from 2022 to 2023? 
+### 10. Which 5 cities generated the most revenue? 
 ````sql
 WITH sales_yearly AS (
     SELECT 
