@@ -35,7 +35,7 @@ ORDER BY year, total_quantity DESC;
 
 2017: Toys were sold the most in units in quarter 4 
 
-2018: Toys were sold the most in units in quarter 2 so far
+2018: Toys were sold the most in units in quarter 2
 ### 4. Which product had the most significant swift in sales during summer? 
 ````sql
 WITH yearly_sales AS (
@@ -63,6 +63,9 @@ FROM yearly_sales y1
 GROUP BY y2.product_name
 ORDER BY sales_change;
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/8647cafd-d7b3-497a-be8a-a2b6c6437667)
+
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/ec4db92c-01fe-4da7-bfc7-2449f5ecabc0)
 ### 5. Top 10 best-selling products
 ````sql
 SELECT TOP (10) s.Product_ID, p.Product_Name, CAST(SUM(p.Product_Price * s.Units) AS decimal(10, 2)) AS total_revenue
@@ -71,6 +74,7 @@ FROM     products$ AS p INNER JOIN
 GROUP BY s.Product_ID, p.Product_Name
 ORDER BY total_revenue DESC; 
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/662a8f4f-2f98-4cdc-8f25-31de655f451d)
 ### 6. Top 10 worst-selling products 
 ````sql
 SELECT TOP (10) s.Product_ID, p.Product_Name, CAST(SUM(p.Product_Price * s.Units) AS decimal(10, 2)) AS total_revenue
@@ -79,6 +83,7 @@ FROM     products$ AS p INNER JOIN
 GROUP BY s.Product_ID, p.Product_Name
 ORDER BY total_revenue;
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/dd4f6fc4-55c4-4853-a0b5-33ff36867b5f)
 ### 7. Sales distribution by product category
 ````sql
 WITH category_sales AS (SELECT p.Product_Category as product_category, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS total_sales
@@ -90,6 +95,7 @@ SELECT product_category, total_sales, CONCAT(CAST(total_sales/ SUM(total_sales) 
 FROM category_sales
 ORDER BY sales_percentage DESC;
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/7dc26a89-0f7d-41cf-aa9d-b3ecf144dd6a)
 ### 8. Sales distribution by store location
 ````sql
 WITH category_sales AS (SELECT st.Store_Location as store_location, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS total_sales
@@ -102,16 +108,28 @@ SELECT store_location, total_sales, CONCAT(CAST(total_sales/ SUM(total_sales) OV
 FROM category_sales
 ORDER BY sales_percentage DESC;
 ````
-### 9. Which 5 stores generated the most revenue? 
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/b6d30f67-3cc7-4cd5-94c1-b255108a9b2d)
+### 9. Which 5 stores generated the most/least revenue? 
 ````sql
 SELECT TOP 5 st.Store_Name AS store_name, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS store_sales
 FROM     products$ AS p INNER JOIN
          sales$ AS s ON p.Product_ID = s.Product_ID INNER JOIN
          stores$ AS st ON s.Store_ID = st.Store_ID
 GROUP BY st.Store_Name
-ORDER BY store_sales DESC
+ORDER BY store_sales DESC;
 ````
-### 10. Which 5 cities generated the most revenue? 
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/dbdeaf89-f633-4af6-a321-83e86c5e244f)
+````sql
+SELECT TOP 5 st.Store_Name AS store_name, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS store_sales
+FROM     products$ AS p INNER JOIN
+         sales$ AS s ON p.Product_ID = s.Product_ID INNER JOIN
+         stores$ AS st ON s.Store_ID = st.Store_ID
+GROUP BY st.Store_Name
+ORDER BY store_sales;
+````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/5d10d957-b290-4ea1-8554-03ec5edcae15)
+
+### 10. Which 5 cities generated the most/least revenue? 
 ````sql
 SELECT TOP 5 st.Store_City AS city, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS city_sales
 FROM     products$ AS p INNER JOIN
@@ -120,5 +138,15 @@ FROM     products$ AS p INNER JOIN
 GROUP BY st.Store_City
 ORDER BY city_sales DESC;
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/ecf8b7c2-8c8c-4908-b230-adcff3198794)
+````sql
+SELECT TOP 5 st.Store_City AS city, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS city_sales
+FROM     products$ AS p INNER JOIN
+         sales$ AS s ON p.Product_ID = s.Product_ID INNER JOIN
+         stores$ AS st ON s.Store_ID = st.Store_ID
+GROUP BY st.Store_City
+ORDER BY city_sales;
+````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/f4af0943-67db-447f-a4af-5231816f7b43)
 # Tableau
 ![Mexico_Toy_Sales](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/a53b0860-0840-44a0-bc3f-8e61e8a27c35)
