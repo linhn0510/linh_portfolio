@@ -68,7 +68,7 @@ ORDER BY sales_change;
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/ec4db92c-01fe-4da7-bfc7-2449f5ecabc0)
 
 
-Jenga generated significantly less by 64% in sales from 2017 till 2018 while Magic Sand generated the most considerable  increase in sales, by %
+Jenga generated significantly less by 64% in sales from 2017 till 2018 while Magic Sand generated the highest increase in sales, by %
 ### 5. Top 10 best-selling products
 ````sql
 SELECT TOP (10) s.Product_ID, p.Product_Name, CAST(SUM(p.Product_Price * s.Units) AS decimal(10, 2)) AS total_revenue
@@ -78,6 +78,8 @@ GROUP BY s.Product_ID, p.Product_Name
 ORDER BY total_revenue DESC; 
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/662a8f4f-2f98-4cdc-8f25-31de655f451d)
+
+Among top 10, Lego Bricks was the best-selling product
 ### 6. Top 10 worst-selling products 
 ````sql
 SELECT TOP (10) s.Product_ID, p.Product_Name, CAST(SUM(p.Product_Price * s.Units) AS decimal(10, 2)) AS total_revenue
@@ -87,6 +89,7 @@ GROUP BY s.Product_ID, p.Product_Name
 ORDER BY total_revenue;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/dd4f6fc4-55c4-4853-a0b5-33ff36867b5f)
+Among top 10, Uno Card Game was the worst-selling product
 ### 7. Sales distribution by product category
 ````sql
 WITH category_sales AS (SELECT p.Product_Category as product_category, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS total_sales
@@ -99,6 +102,8 @@ FROM category_sales
 ORDER BY sales_percentage DESC;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/7dc26a89-0f7d-41cf-aa9d-b3ecf144dd6a)
+
+Toys accounted for the most amount of sales
 ### 8. Sales distribution by store location
 ````sql
 WITH category_sales AS (SELECT st.Store_Location as store_location, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS total_sales
@@ -112,6 +117,8 @@ FROM category_sales
 ORDER BY sales_percentage DESC;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/b6d30f67-3cc7-4cd5-94c1-b255108a9b2d)
+
+Stores in downtown brought in more than half of the sales 
 ### 9. Which 5 stores generated the most/least revenue? 
 ````sql
 SELECT TOP 5 st.Store_Name AS store_name, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS store_sales
