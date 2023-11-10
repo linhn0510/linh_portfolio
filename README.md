@@ -19,6 +19,11 @@ FROM     sales$
 GROUP BY DATENAME(year, Date), DATENAME(month, Date)
 ORDER BY year, total_quantity DESC
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/24d90923-1f17-49cd-9486-0e8f13b8344d)
+
+2017: Toys were sold the most in units in December 
+
+2018: Toys were sold the most in units in March 
 ### 3. Which quarter sold the most by units 
 ````sql
 SELECT DATENAME(year, Date) AS year, DATENAME(quarter, Date) AS quarter, COUNT(*) AS total_quantity
@@ -26,6 +31,11 @@ FROM     sales$
 GROUP BY DATENAME(year, Date), DATENAME(quarter, Date)
 ORDER BY year, total_quantity DESC;
 ````
+![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/e3c17e28-35e3-4fe4-9e81-7022b1c64367)
+
+2017: Toys were sold the most in units in quarter 4 
+
+2018: Toys were sold the most in units in quarter 2 so far
 ### 4. Which product had the most significant swift in sales during summer? 
 ````sql
 WITH yearly_sales AS (
