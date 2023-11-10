@@ -1,5 +1,5 @@
 # SQL Analysis and Tableau Visualisation for Toy Sales Dataset
-The goal of this project is to analyse toy sales data in Mexico (2017-2018)to derive actionable insights that can inform business strategies and decision-making. By leveraging various data analysis techniques, we aim to uncover patterns, trends, and key factors influencing the toy market in Mexico.
+This project aims to analyse toy sales data in Mexico (Jan 2017- Sep 2018)to derive actionable insights that can inform business strategies and decision-making. By leveraging various data analysis techniques, we aim to uncover patterns, trends, and key factors influencing the toy market in Mexico.
 
 # SQL
 ### 1. Which weekday sold the most by units
