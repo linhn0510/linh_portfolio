@@ -89,6 +89,7 @@ GROUP BY s.Product_ID, p.Product_Name
 ORDER BY total_revenue;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/dd4f6fc4-55c4-4853-a0b5-33ff36867b5f)
+
 Among top 10, Uno Card Game was the worst-selling product
 ### 7. Sales distribution by product category
 ````sql
