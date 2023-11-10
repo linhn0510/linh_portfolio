@@ -127,7 +127,6 @@ GROUP BY
 ORDER BY 
     sales_change_percentage;
 ````
-
-
-
+# Tableau
+https://user-images.githubusercontent.com/125606128/282027409-d4d7ec7e-8dae-4c00-82a4-363f0450435e.png
 
