@@ -100,32 +100,12 @@ ORDER BY store_sales DESC
 ````
 ### 10. Which 5 cities generated the most revenue? 
 ````sql
-WITH sales_yearly AS (
-    SELECT 
-        YEAR(s.Date) AS year,
-        st.Store_City AS store_city,
-        CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS store_sales
-    FROM     
-        products$ AS p 
-    INNER JOIN
-        sales$ AS s ON p.Product_ID = s.Product_ID 
-    INNER JOIN
-        stores$ AS st ON s.Store_ID = st.Store_ID
-    GROUP BY 
-        YEAR(s.Date), st.Store_City
-)
-
-SELECT 
-    TOP 5 store_city, 
-    SUM(CASE WHEN year = '2017' THEN store_sales ELSE 0 END) AS sales_2017, 
-    SUM(CASE WHEN year = '2018' THEN store_sales ELSE 0 END) AS sales_2018, 
-    (SUM(CASE WHEN year = '2018' THEN store_sales ELSE 0 END) - SUM(CASE WHEN year = '2017' THEN store_sales ELSE 0 END)) * 100.0 / NULLIF(SUM(CASE WHEN year = '2017' THEN store_sales ELSE 0 END), 0) AS sales_change_percentage
-FROM 
-    sales_yearly
-GROUP BY 
-    store_city
-ORDER BY 
-    sales_change_percentage;
+SELECT TOP 5 st.Store_City AS city, CAST(SUM(s.Units * p.Product_Price) AS decimal(10, 2)) AS city_sales
+FROM     products$ AS p INNER JOIN
+         sales$ AS s ON p.Product_ID = s.Product_ID INNER JOIN
+         stores$ AS st ON s.Store_ID = st.Store_ID
+GROUP BY st.Store_City
+ORDER BY city_sales DESC;
 ````
 # Tableau
 ![Dashboard 1 (1)](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/0b8c6eed-e6a2-4544-afe3-5d027ce01111)
