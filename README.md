@@ -160,4 +160,6 @@ ORDER BY city_sales;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/f4af0943-67db-447f-a4af-5231816f7b43)
 # Tableau
+[Link to Dashboard](https://public.tableau.com/app/profile/linh.nguyen6533/viz/ModelToySales/Dashboard1)
+
 ![Mexico_Toy_Sales](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/a53b0860-0840-44a0-bc3f-8e61e8a27c35)
