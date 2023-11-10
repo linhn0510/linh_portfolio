@@ -67,6 +67,7 @@ ORDER BY sales_change;
 
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/ec4db92c-01fe-4da7-bfc7-2449f5ecabc0)
 
+
 Jenga generated significantly less by 64% in sales from 2017 till 2018 while Magic Sand generated the most considerable  increase in sales, by %
 ### 5. Top 10 best-selling products
 ````sql
