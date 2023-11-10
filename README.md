@@ -10,6 +10,7 @@ GROUP BY DATENAME(dw, Date)
 ORDER BY total_quantity DESC;
 ````
 ![image](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/51dd82b7-1b64-4e96-940d-5bd159110440)
+Sunday and Saturday are busiest days, people are more likely to do toy shopping on the weekends  
 ### 2. Which month sold the most by units
 ````sql
 SELECT DATENAME(year, Date) AS year, DATENAME(month, Date) AS month, COUNT(*) AS total_quantity
