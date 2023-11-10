@@ -108,5 +108,4 @@ GROUP BY st.Store_City
 ORDER BY city_sales DESC;
 ````
 # Tableau
-![Dashboard 1 (1)](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/0b8c6eed-e6a2-4544-afe3-5d027ce01111)
-
+![Mexico_Toy_Sales](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/a53b0860-0840-44a0-bc3f-8e61e8a27c35)
