@@ -128,5 +128,5 @@ ORDER BY
     sales_change_percentage;
 ````
 # Tableau
-![Dashboard 1](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/2f9e6cf7-acea-48d5-8d6f-923773a2c621)![Dashboard 1](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/2f9e6cf7-acea-48d5-8d6f-923773a2c621)
+![Dashboard 1 (1)](https://github.com/linhn0510/linhnguyen_portfolio/assets/125606128/0b8c6eed-e6a2-4544-afe3-5d027ce01111)
 
